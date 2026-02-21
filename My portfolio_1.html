@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My website porfolio !!</title>
+</head>
+<body>
+    <style>
+       body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(-45deg, #fdfbfb, #ebedee, #dfe9f3, #f5f7fa);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    font-family: Arial, sans-serif;
+}
+body{
+    text-align: center;
+
+}
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+    h1{
+        color: blueviolet;
+        padding:2px;
+    }
+    nav{
+        color: cyan;
+    }
+}
+    </style>
+<h1>Welcome, back user!</h1>
+<p>In this portfolio you can see, About mee!.</p>
+<nav>You can see the buttons below to see more about mee.</nav>
+<button onclick="window.location.href='My portfolio_2.html'">
+  About, mee 🚀
+</button>
+<head>
+  <title>About Me</title>
+
+  <style>
+    body {
+      text-align: center;
+      margin-top: 100px;
+      font-family: Arial;
+    }
+
+    .typing {
+      font-size: 28px;
+      font-weight: bold;
+      color: #6a5acd;
+      border-right: 3px solid #6a5acd;
+      padding-right: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Hello, I'm Apoorv 👋</h1>
+<h2><span class="typing"></span></h2>
+
+<script>
+  const texts = [
+    "Welocme 🥳 ",
+    "To my portfolio 🥳🥳 ",
+    "Also visit to my more websites 🥳🥳🥳 ",
+    "Thanks for reaching out !!🥳🥳🥳🥳 "
+  ];
+
+  let count = 0;
+  let index = 0;
+  let currentText = "";
+  let letter = "";
+
+  function type() {
+    if (count === texts.length) {
+      count = 0;
+    }
+
+    currentText = texts[count];
+    letter = currentText.slice(0, ++index);
+
+    document.querySelector(".typing").textContent = letter;
+
+    if (letter.length === currentText.length) {
+      setTimeout(erase, 1200);
+    } else {
+      setTimeout(type, 100);
+    }
+  }
+
+  function erase() {
+    letter = currentText.slice(0, --index);
+    document.querySelector(".typing").textContent = letter;
+
+    if (letter.length === 0) {
+      count++;
+      setTimeout(type, 300);
+    } else {
+      setTimeout(erase, 60);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    type();
+  });
+</script>
+</body>
+</html>

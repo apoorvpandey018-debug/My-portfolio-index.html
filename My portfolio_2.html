@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About mee !!</title>
+</head>
+<script>
+  const texts = [
+    "Web Developer 💻",
+    "Python Programmer 🐍",
+    "Learning AI & ML 🤖",
+    "Future Tech Creator 🚀",
+    "Coding expert 💻"
+  ];
+
+  let count = 0;
+  let index = 0;
+  let currentText = "";
+  let letter = "";
+
+  function type() {
+    if (count === texts.length) {
+      count = 0;
+    }
+
+    currentText = texts[count];
+    letter = currentText.slice(0, ++index);
+
+    document.querySelector(".typing").textContent = letter;
+
+    if (letter.length === currentText.length) {
+      setTimeout(erase, 1200);
+    } else {
+      setTimeout(type, 100);
+    }
+  }
+
+  function erase() {
+    letter = currentText.slice(0, --index);
+    document.querySelector(".typing").textContent = letter;
+
+    if (letter.length === 0) {
+      count++;
+      setTimeout(type, 300);
+    } else {
+      setTimeout(erase, 60);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    type();
+  });
+</script>
+<body>
+    <style>
+        .skills-section {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.skills-section h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #333;
+}
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}   
+h3{
+    color:aqua;
+}
+ul{
+    color:antiquewhite;
+}
+.card {
+    background: white;
+    padding: 25px;
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}
+body{
+    text-align: center;
+    color:lightblue;
+    background-color: lightskyblue;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: blue;
+}
+.skills {
+  max-width: 600px;
+  margin: auto;
+  padding: 50px 20px;
+}
+
+.skills h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.skill {
+  margin-bottom: 20px;
+}
+
+.skill p {
+  margin: 5px 0;
+  font-weight: bold;
+  color: #444;
+}
+
+.progress {
+  background: #e0e0e0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 25px;
+  background: linear-gradient(90deg, #a6c1ee, #fbc2eb);
+  text-align: right;
+  padding-right: 10px;
+  line-height: 25px;
+  color: white;
+  border-radius: 20px;
+  animation: fillAnimation 2s ease-in-out;
+}
+
+.learning {
+  background: linear-gradient(90deg, #84fab0, #8fd3f4);
+}
+
+@keyframes fillAnimation {
+  from {
+    width: 0;
+  }
+}
+.card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card ul li {
+    margin: 8px 0;
+    color: #666;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+  margin: 0;
+  padding: 0;
+}
+
+.skills-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.skills-section h2 {
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.circle {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: conic-gradient(#a6c1ee 0deg, #fbc2eb 0deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: rotateCircle 2s ease forwards;
+}
+
+/* Glass effect inside */
+.inner {
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.typing {
+  color: #6a5acd;
+  font-weight: bold;
+  border-right: 3px solid #6a5acd;
+  padding-right: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+.circle {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: conic-gradient(#a6c1ee 0deg, #e0e0e0 0deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+}
+
+/* Floating hover effect */
+.circle:hover {
+  transform: translateY(-15px) rotateX(10deg) rotateY(10deg) scale(1.05);
+  box-shadow: 
+    0 20px 40px rgba(0,0,0,0.2),
+    0 0 25px rgba(166, 193, 238, 0.7);
+}
+
+/* Smooth floating idle animation */
+.circle {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.inner h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.inner span {
+  font-weight: bold;
+  color: #555;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Animation */
+@keyframes rotateCircle {
+  from {
+    background: conic-gradient(#a6c1ee 0deg, #fbc2eb 0deg);
+  }
+}
+    </style>
+    <h1>About, mee !!</h1>
+    <section class="skills-section">
+    <h2>My Skills</h2>
+    <h1>Hello, I'm Apoorv 👋 and I 'm</h1>
+<h2><span class="typing"></span></h2>
+
+    <div class="skills-container">
+        <div class="card">
+            <h3>💻 What I Know</h3>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>Java</li>
+            </ul>
+        </div>
+        <section class="skills">
+  <h2>My Skills</h2>
+</style>
+
+  <div class="skill">
+    <p>HTML</p>
+    <div class="progress">
+      <div class="progress-bar" style="width: 95%;">95%</div>
+    </div>
+  </div>
+  <div class="skill">
+    <p>CSS</p>
+    <div class="progress">
+      <div class="progress-bar" style="width: 90%;">90%</div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <p>JavaScript</p>
+    <div class="progress">
+      <div class="progress-bar" style="width: 80%;">80%</div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <p>Python</p>
+    <div class="progress">
+      <div class="progress-bar" style="width: 85%;">100%</div>
+    </div>
+  </div>
+  <section class="skills-section">
+  <h2>My Skills</h2>
+
+  <div class="skills-container">
+
+    <div class="circle" data-percent="95">
+      <div class="inner">
+        <h3>HTML</h3>
+        <span>95%</span>
+      </div>
+    </div>
+
+    <div class="circle" data-percent="85">
+      <div class="inner">
+        <h3>Python</h3>
+        <span>85%</span>
+      </div>
+    </div>
+
+    <div class="circle" data-percent="60">
+      <div class="inner">
+        <h3>AI/ML</h3>
+        <span>60%</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+  <div class="skill">
+    <p>AI / ML (Learning)</p>
+    <div class="progress">
+      <div class="progress-bar learning" style="width: 60%;">60%</div>
+    </div>
+  </div>
+  <div class="circle reveal" data-percent="95"></div>
+
+</section>
+
+        <div class="card">
+            <h3>🚀 Currently Learning</h3>
+            <ul>
+                <li>Artificial Intelligence (AI)</li>
+                <li>Machine Learning (ML)</li>
+                <li>Django</li>
+                <li>Advanced Python</li>
+            </ul>
+        </div>
+    </div>
+</section>
+</body>
+</html>
