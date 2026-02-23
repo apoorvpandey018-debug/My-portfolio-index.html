@@ -7,38 +7,32 @@
 </head>
 <body>
     <style>
-       body {
+body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background: linear-gradient(-45deg, #fdfbfb, #ebedee, #dfe9f3, #f5f7fa);
+    background: linear-gradient(-45deg, #fdfbfb, #ebedee, lightblue, #f5f7fa);
     background-size: 400% 400%;
-    animation: gradientMove 10s ease infinite;
+    animation: gradientBG 10s ease infinite;
     font-family: Arial, sans-serif;
-}
-body{
     text-align: center;
+}
 
+h1{
+    color: blueviolet;
+    padding:2px;
 }
+
+nav{
+    color: cyan;
+}
+
 @keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-    h1{
-        color: blueviolet;
-        padding:2px;
-    }
-    nav{
-        color: cyan;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
-    </style>
+</style>
 <h1>Welcome, back user!</h1>
 <p>In this portfolio you can see, About mee!.</p>
 <nav>You can see the buttons below to see more about mee.</nav>
